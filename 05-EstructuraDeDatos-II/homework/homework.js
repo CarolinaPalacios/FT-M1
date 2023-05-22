@@ -30,7 +30,7 @@ LinkedList.prototype.add = function(value){
   while (current.next){
       current = current.next;
   }
-  current.next = newNode
+  current.next = newNode;
   return value;
 }
 
@@ -39,38 +39,38 @@ LinkedList.prototype.remove = function(){
     return null;
   }
 
-  let current = this.head
-  let previous = null;
+  let current = this.head;
+  let aux = null;
 
 while (current.next !== null) {
-   previous = current;
+   aux = current;
    current = current.next;
 }
-    if (previous === null) {
+    if (aux === null) {
     this.head = null;
   } else {
-    previous.next = null;
+    aux.next = null;
   }
   
    return current.value;
 }
 LinkedList.prototype.search = function (value) {
-  let current = this.head
+  let current = this.head;
   if (current === null) {
-    return null
+    return null;
   }
   while (current) {
     if (typeof value === 'function') {
-      if (value(current.value)){
-        return current.value
+      if (value(current.value)){ 
+        return current.value;
       }
     }
     if (current.value === value) {
-      return value
+      return value;
     }
-    current = current.next
+    current = current.next;
   }
-  return null
+  return null;
 }
 
 
